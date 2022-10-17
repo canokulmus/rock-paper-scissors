@@ -12,8 +12,8 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection, round) {
 
     if (playerSelection === computerSelection) {
-        console.log(`Round ${round}/5 : You throwed the same hand signal with the computer. It's a tie!`);
-        return "tie";
+        console.log(`Round ${round}/5 : You throwed the same hand signal with the computer. Draw!`);
+        return "draw";
 
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         console.log(`Round ${round}/5 : You win! Rock beats Scissors`);
@@ -48,7 +48,7 @@ function game() {
 
     let playerScore = 0;
     let computerScore = 0;
-    let tie = 0;
+    let draw = 0;
     let round = 1;
 
     for (let i = 0; i < 5; i++) {
@@ -62,22 +62,22 @@ function game() {
         } else if (result === "lose") {
             computerScore++;
             round++;
-        } else if (result === "tie") {
-            tie++;
+        } else if (result === "draw") {
+            draw++;
             round++;
         } else {
             i--;
         }
     }
     //results of each round
-    console.log(`FINAL: Player Score: ${playerScore}, Computer Score: ${computerScore}, Ties: ${tie}`);
+    console.log(`FINAL: Player Score: ${playerScore}, Computer Score: ${computerScore}, Draw: ${draw}`);
 
     if (playerScore > computerScore) {
         console.log("*You won the game!");
     } else if (playerScore < computerScore) {
         console.log("*You lost the game!");
     } else {
-        console.log("*It's a tie!");
+        console.log("*DRAW!");
     }
 }
 
