@@ -1,4 +1,3 @@
-
 function computerPlay() {
     let computerSelection = Math.floor(Math.random() * 3);
     if (computerSelection === 0) {
